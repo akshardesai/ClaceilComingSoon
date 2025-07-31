@@ -1,0 +1,77 @@
+---
+import { Image } from "astro:assets"
+import buildingImage from "../assets/building.jpg"
+import ContactUs from "./ContactUs"
+import backgroundImage from "../assets/background.jpg"
+---
+
+<section  class="w-full h-full  px-[12%] py-[4%] bg-linear-to-t from-cyan-300 to-cyan-500">
+  <div class="content-container w-full h-full bg-white px-[2%]">
+    <div class="socialLinks-container w-full h-[8%] bg-white flex justify-between items-center  ">
+
+      <div class="name-container">
+      
+        <h1 class="font-bold font-mono">
+          
+          INFINITE
+        </h1>
+      
+      </div>
+      <div class="socialLinks-container flex gap-2">
+
+        <i class="ri-instagram-fill"></i>
+
+        <i class="ri-facebook-box-fill"></i>
+        <i class="ri-whatsapp-fill"></i>
+      </div>
+
+    </div>
+    
+    <div class="w-full h-[84%] SoonTextImage-container flex"> 
+      <div class="left-container w-[50%] h-full   flex flex-col justify-center">
+        <p class="text-gray-400 text-xs font-semibold">
+
+          COMING SOON
+        </p>
+        <p class="font-bold text-3xl">Our new website </p>
+        <p class="font-bold text-3xl mb-2">is on it's way</p>
+        <p class="text-gray-500 text-xs font-semibold">Signup to be the first to know </p>
+        <p class="text-gray-500 text-xs font-semibold" >when we launch</p>
+        <ContactUs></ContactUs>
+      
+      </div>
+      <div class="right-container w-[50%] h-full bg-white">
+
+        <div class="image-container w-full h-full px-[4%] py-[5%]">
+
+
+          <Image  src={buildingImage} class="w-full h-full" alt="building"/>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="contactInfo-container w-full h-[8%] bg-white flex justify-between items-center ">
+
+      <div class="name-container">
+      
+        <h1 class="font-bold text-xs ">
+          
+          <i class="ri-mail-fill"></i> IrshadMihir@hotmail.com
+        </h1>
+      
+      </div>
+      <div class="socialLinks-container flex gap-2">
+
+        <i class="ri-instagram-fill"></i>
+
+        <i class="ri-facebook-box-fill"></i>
+        <i class="ri-whatsapp-fill"></i>
+      </div>
+
+
+    </div>
+
+  </div>
+</section>
+
