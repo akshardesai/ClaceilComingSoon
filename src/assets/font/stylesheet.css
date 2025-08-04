@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Gallient';
+    src: url('Gallient-Regular.woff2') format('woff2'),
+        url('Gallient-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

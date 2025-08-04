@@ -29,7 +29,7 @@ import ContactUs from "./ContactUs.jsx"
       <div class=" max-w-4xl mx-auto px-4">
         <!-- Main heading -->
         <div class="launching-shortly-text-container mb-6">
-          <p class="text-6xl libertinus-serif-bold text-center font-extralight">Launching Shortly...</p>
+          <p class="text-6xl  text-center custom-font">Launching Shortly...</p>
         </div>
         
         <!-- Subtitle text -->
@@ -61,7 +61,18 @@ import ContactUs from "./ContactUs.jsx"
   }
 }
 
+@font-face {
+  font-family: 'MyGallient';
+  src:url('../assets/font/Gallient-Regular.woff2') format('woff2'),
+      url('../assets/font/Gallient-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
+
+.custom-font{
+  font-family: "MyGallient";
+}
 
 
   .bg-\[url\(\.\.\/assets\/background\.jpg\)\] {
@@ -70,10 +81,6 @@ import ContactUs from "./ContactUs.jsx"
     background-repeat: no-repeat;
   }
   
-  .libertinus-serif-bold {
-    font-family: "Libertinus Serif", serif;
-    font-weight: 200;
-  }
   
   .google-sans-code {
     font-family: "Google Sans Code", monospace;
