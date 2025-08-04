@@ -1,77 +1,76 @@
 ---
 import { Image } from "astro:assets"
-import buildingImage from "../assets/building.jpg"
-import ContactUs from "./ContactUs"
-import backgroundImage from "../assets/background.jpg"
+import logo from "../assets/logo.svg"
+import ContactUs from "./ContactUs.jsx"
 ---
-
-<section  class="w-full h-full  px-[12%] py-[4%] bg-linear-to-t from-cyan-300 to-cyan-500">
-  <div class="content-container w-full h-full bg-white px-[2%]">
-    <div class="socialLinks-container w-full h-[8%] bg-white flex justify-between items-center  ">
-
-      <div class="name-container">
-      
-        <h1 class="font-bold font-mono">
-          
-          INFINITE
-        </h1>
-      
+<section class="w-full h-full bg-black">
+  <!-- Header with logo and name - properly centered -->
+  <div class="w-full h-[15%] bg-white flex justify-center items-center pt-2 pe-17">
+    <div class="flex items-center justify-center gap-4">
+      <div class="logo-container">
+        <Image src={logo} class="w-[200px] h-[200px]" alt="logo" />
       </div>
-      <div class="socialLinks-container flex gap-2">
-
-        <i class="ri-instagram-fill"></i>
-
-        <i class="ri-facebook-box-fill"></i>
-        <i class="ri-whatsapp-fill"></i>
-      </div>
-
-    </div>
-    
-    <div class="w-full h-[84%] SoonTextImage-container flex"> 
-      <div class="left-container w-[50%] h-full   flex flex-col justify-center">
-        <p class="text-gray-400 text-xs font-semibold">
-
-          COMING SOON
-        </p>
-        <p class="font-bold text-3xl">Our new website </p>
-        <p class="font-bold text-3xl mb-2">is on it's way</p>
-        <p class="text-gray-500 text-xs font-semibold">Signup to be the first to know </p>
-        <p class="text-gray-500 text-xs font-semibold" >when we launch</p>
-        <ContactUs></ContactUs>
-      
-      </div>
-      <div class="right-container w-[50%] h-full bg-white">
-
-        <div class="image-container w-full h-full px-[4%] py-[5%]">
-
-
-          <Image  src={buildingImage} class="w-full h-full" alt="building"/>
-
+      <div class="name-container flex flex-col justify-center -ms-17">
+        <div class="flex justify-center">
+          <h1 class="roboto-heading text-[40px] tracking-widest -mb-3">CLACEIL</h1>
         </div>
-
+        <span class="text-[12px] sm:text-[13px] font-medium text-gray-400 tracking-widest text-center">ARCHITECTURAL PRODUCTS</span>
       </div>
     </div>
-    <div class="contactInfo-container w-full h-[8%] bg-white flex justify-between items-center ">
-
-      <div class="name-container">
-      
-        <h1 class="font-bold text-xs ">
-          
-          <i class="ri-mail-fill"></i> IrshadMihir@hotmail.com
-        </h1>
-      
+  </div>
+  
+  <!-- Background image section -->
+  <div class="bg-[url(../assets/background.jpg)] w-full h-[85%] relative overflow-hidden bg-cover bg-center">
+    <!-- Dark overlay -->
+    <div class="absolute inset-0 bg-black opacity-35 z-10"></div>
+    
+    <!-- Main content - explicitly centered -->
+    <div class="absolute inset-0 z-30 flex flex-col items-center justify-center text-white">
+      <div class=" max-w-4xl mx-auto px-4">
+        <!-- Main heading -->
+        <div class="launching-shortly-text-container mb-6">
+          <p class="text-6xl libertinus-serif-bold text-center">Launching Shortly...</p>
+        </div>
+        
+        <!-- Subtitle text -->
+        <div class="contact-us-content mb-8">
+          <p class=" sm:text-xl google-sans-code font-light text-center mb-2">A whole new experience on its way.</p>
+          <p class=" sm:text-xl font-light google-sans-code text-center">Stay tuned!</p>
+        </div>
+        
+        <!-- Contact component -->
+        <div class="flex justify-center">
+          <ContactUs client:load />
+        </div>
       </div>
-      <div class="socialLinks-container flex gap-2">
-
-        <i class="ri-instagram-fill"></i>
-
-        <i class="ri-facebook-box-fill"></i>
-        <i class="ri-whatsapp-fill"></i>
-      </div>
-
-
     </div>
-
   </div>
 </section>
 
+<style>
+  .bg-\[url\(\.\.\/assets\/background\.jpg\)\] {
+    background-size: cover !important;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .libertinus-serif-bold {
+    font-family: "Libertinus Serif", serif;
+    font-weight: 700;
+  }
+  
+  .google-sans-code {
+    font-family: "Google Sans Code", monospace;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+  }
+ 
+  .roboto-heading {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+  }
+</style>
