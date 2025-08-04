@@ -5,7 +5,7 @@ import ContactUs from "./ContactUs.jsx"
 ---
 <section class="w-full h-full bg-black">
   <!-- Header with logo and name - properly centered -->
-  <div class="w-full h-[15%] bg-white flex justify-center items-center pt-2 pe-14 sm:pe-24">
+  <div class="name-logo-container w-full h-[15%] bg-white flex justify-center items-center pt-2  sm:pe-24">
     <div class="flex items-center justify-center gap-4">
       <div class="logo-container">
         <Image src={logo} class="w-[200px] h-[200px] sm:w-[200px] sm:h-[200px]" alt="logo" />
@@ -48,6 +48,22 @@ import ContactUs from "./ContactUs.jsx"
 </section>
 
 <style>
+  /*targetting screens smaller than 324px*/
+
+@media (min-width: 320px) and (max-width: 350px) {
+  .name-logo-container {
+    padding-inline-end: 50px;
+  }
+}
+@media (min-width: 351px) and (max-width: 400px) {
+  .name-logo-container {
+    padding-inline-end: 80px;
+  }
+}
+
+
+
+
   .bg-\[url\(\.\.\/assets\/background\.jpg\)\] {
     background-size: cover !important;
     background-position: center;
