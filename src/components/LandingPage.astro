@@ -1,22 +1,17 @@
 ---
 import { Image } from "astro:assets"
-import logo from "../assets/logo.svg"
+import logo from "../assets/logoName.png"
 import ContactUs from "./ContactUs.jsx"
 ---
 <section class="w-full h-full bg-black">
   <!-- Header with logo and name - properly centered -->
-  <div class="name-logo-container w-full h-[15%] bg-white flex justify-center items-center pt-2  sm:pe-24">
-    <div class="flex items-center justify-center gap-4">
-      <div class="logo-container">
-        <Image src={logo} class="w-[200px] h-[200px] sm:w-[200px] sm:h-[200px]" alt="logo" />
-      </div>
-      <div class="name-container flex flex-col justify-center -ms-16 sm:-ms-17">
-        <div class="flex justify-center">
-          <h1 class="roboto-heading text-[35px] sm:text-[40px] tracking-widest -mb-3">CLACEIL</h1>
-        </div>
-        <span class="text-[10px] sm:text-[13px] font-medium text-gray-400 tracking-widest text-center">ARCHITECTURAL PRODUCTS</span>
-      </div>
+  <div class=" w-full h-[15%] bg-white flex justify-center items-center pt-10   ">
+
+    <div class="name-logo-container w-[90%]   ">
+
+      <Image src={logo} class="w-full h-full" alt="logo and name"/>
     </div>
+
   </div>
   
   <!-- Background image section -->
@@ -50,16 +45,34 @@ import ContactUs from "./ContactUs.jsx"
 <style>
   /*targetting screens smaller than 324px*/
 
-@media (min-width: 320px) and (max-width: 350px) {
+@media (min-width: 420px) and (max-width: 640px) {
   .name-logo-container {
-    padding-inline-end: 50px;
+    width: 70% !important; 
+    
   }
 }
-@media (min-width: 351px) and (max-width: 400px) {
+@media (min-width: 641px) and (max-width:1000px) {
   .name-logo-container {
-    padding-inline-end: 80px;
+   width: 40% !important;
+   padding-inline-end:40px ;
   }
 }
+
+@media (min-width: 1002px) and (max-width:1140px) {
+  .name-logo-container {
+   width: 35% !important;
+   padding-inline-end: 50px;
+  }
+}
+
+@media (min-width: 1142px) and (max-width:5000px) {
+  .name-logo-container {
+   width: 25% !important;
+   padding-inline-end: 50px;
+  }
+}
+
+
 
 @font-face {
   font-family: 'MyGallient';
