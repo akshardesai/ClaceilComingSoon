@@ -29,7 +29,7 @@ import ContactUs from "./ContactUs.jsx"
         
         <!-- Subtitle text -->
         <div class="contact-us-content mb-8">
-          <p class=" text-sm sm:text-xl google-sans-code font-light text-center mb-2">A whole new experience on its way.</p>
+          <p class=" text-sm sm:text-xl font-mono font-light text-center mb-2">A whole new experience on its way.</p>
           <p class=" sm:text-xl font-light google-sans-code text-center">Stay tuned!</p>
         </div>
         
@@ -44,6 +44,15 @@ import ContactUs from "./ContactUs.jsx"
 
 <style>
   /*targetting screens smaller than 324px*/
+
+  @media (min-width: 300px) and (max-width: 419px) {
+  .name-logo-container {
+    width: 80% !important; 
+    padding-inline-end: 20px;
+    
+  }
+}
+
 
 @media (min-width: 420px) and (max-width: 640px) {
   .name-logo-container {
