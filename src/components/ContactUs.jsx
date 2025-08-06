@@ -24,6 +24,9 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
+    if (!formData.email || formData.email.length<=0) {
+      return;
+    }
 
     const response = await contactUsDB(formData);
 
@@ -309,6 +312,7 @@ const ContactUs = () => {
                   }}
                 >
                   <button
+                  type="submit"
                     onClick={handleSubmit}
                     className="w-full bg-black  text-white py-3 px-4 rounded-lg font-medium transition-all duration-300 tracking-wide transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl relative overflow-hidden group"
                   >
@@ -333,7 +337,6 @@ const ContactUs = () => {
 
                   <a
                     href="tel:+919998089866"
-                    onClick={handleSubmit}
                     className="w-1/4 bg-black  text-white py-3 px-4 rounded-lg font-medium transition-all duration-300 tracking-wide transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl relative overflow-hidden group"
                   >
                     <span className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
