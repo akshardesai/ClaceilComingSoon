@@ -96,14 +96,14 @@ const ContactUs = () => {
           }`}
           onClick={closeModal}
         >
-          {/* Backdrop with animated blur */}
+          {/* Backdrop */}
           <div
             className={`absolute inset-0 bg-black/50 backdrop-blur-sm transition-all duration-300 ${
               isVisible ? "opacity-100" : "opacity-0"
             }`}
           ></div>
 
-          {/* Modal Container with spring animation */}
+          {/* Modal Container */}
           <div
             className={`relative w-full max-w-md bg-white rounded-2xl shadow-2xl transition-all duration-300 ease-out ${
               isVisible
@@ -127,10 +127,10 @@ const ContactUs = () => {
               <div className="bg-white rounded-2xl w-full h-full"></div>
             </div>
 
-            {/* Close Button with ripple effect */}
+            {/* Close Button */}
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-black hover:text-white transition-all duration-200 text-gray-600  transform hover:scale-110 active:scale-95 z-10"
+              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-black hover:text-white transition-all duration-200 text-gray-600 transform hover:scale-110 active:scale-95 z-10"
               style={{
                 animation: isVisible
                   ? "fadeInRotate 0.5s ease-out 0.2s backwards"
@@ -152,7 +152,7 @@ const ContactUs = () => {
               </svg>
             </button>
 
-            {/* Modal Header with slide animation */}
+            {/* Modal Header */}
             <div
               className={`px-6 pt-6 pb-2 transition-all duration-600 ease-out ${
                 isVisible
@@ -176,180 +176,180 @@ const ContactUs = () => {
 
             {/* Modal Body */}
             <div className="px-6 pb-6">
-              <div className="space-y-4">
-                {/* Name Field */}
-                <div
-                  className={`transition-all duration-600 ease-out ${
-                    isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-6"
-                  }`}
-                  style={{
-                    animation: isVisible
-                      ? "slideInUp 0.6s ease-out 0.2s backwards"
-                      : "none",
-                  }}
-                >
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+              <form onSubmit={handleSubmit}>
+                <div className="space-y-4">
+                  {/* Name Field */}
+                  <div
+                    className={`transition-all duration-600 ease-out ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-6"
+                    }`}
+                    style={{
+                      animation: isVisible
+                        ? "slideInUp 0.6s ease-out 0.2s backwards"
+                        : "none",
+                    }}
                   >
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="text-black w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-300 bg-gray-50 focus:bg-white hover:border-gray-300 transform focus:scale-[1.02] hover:shadow-md"
-                    placeholder="Your name"
-                    required
-                  />
-                </div>
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      className="text-black w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-300 bg-gray-50 focus:bg-white hover:border-gray-300 transform focus:scale-[1.02] hover:shadow-md"
+                      placeholder="Your name"
+                      required
+                    />
+                  </div>
 
-                {/* Email Field */}
-                <div
-                  className={`transition-all duration-600 ease-out ${
-                    isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-6"
-                  }`}
-                  style={{
-                    animation: isVisible
-                      ? "slideInUp 0.6s ease-out 0.3s backwards"
-                      : "none",
-                  }}
-                >
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                  {/* Email Field */}
+                  <div
+                    className={`transition-all duration-600 ease-out ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-6"
+                    }`}
+                    style={{
+                      animation: isVisible
+                        ? "slideInUp 0.6s ease-out 0.3s backwards"
+                        : "none",
+                    }}
                   >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="text-black w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-300 bg-gray-50 focus:bg-white hover:border-gray-300 transform focus:scale-[1.02] hover:shadow-md"
-                    placeholder="your@email.com"
-                    
-                  />
-                </div>
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                      className="text-black w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-300 bg-gray-50 focus:bg-white hover:border-gray-300 transform focus:scale-[1.02] hover:shadow-md"
+                      placeholder="your@email.com"
+                    />
+                  </div>
 
-                {/* Subject Field */}
-                <div
-                  className={`transition-all duration-600 ease-out ${
-                    isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-6"
-                  }`}
-                  style={{
-                    animation: isVisible
-                      ? "slideInUp 0.6s ease-out 0.4s backwards"
-                      : "none",
-                  }}
-                >
-                  <label
-                    htmlFor="subject"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                  {/* Subject Field */}
+                  <div
+                    className={`transition-all duration-600 ease-out ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-6"
+                    }`}
+                    style={{
+                      animation: isVisible
+                        ? "slideInUp 0.6s ease-out 0.4s backwards"
+                        : "none",
+                    }}
                   >
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    className="text-black w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-300 bg-gray-50 focus:bg-white hover:border-gray-300 transform focus:scale-[1.02] hover:shadow-md"
-                    placeholder="What's this about?"
-                    required
-                  />
-                </div>
+                    <label
+                      htmlFor="subject"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      Subject
+                    </label>
+                    <input
+                      type="text"
+                      id="subject"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      className="text-black w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-300 bg-gray-50 focus:bg-white hover:border-gray-300 transform focus:scale-[1.02] hover:shadow-md"
+                      placeholder="What's this about?"
+                      required
+                    />
+                  </div>
 
-                {/* Message Field */}
-                <div
-                  className={`transition-all duration-600 ease-out ${
-                    isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-6"
-                  }`}
-                  style={{
-                    animation: isVisible
-                      ? "slideInUp 0.6s ease-out 0.5s backwards"
-                      : "none",
-                  }}
-                >
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                  {/* Message Field */}
+                  <div
+                    className={`transition-all duration-600 ease-out ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-6"
+                    }`}
+                    style={{
+                      animation: isVisible
+                        ? "slideInUp 0.6s ease-out 0.5s backwards"
+                        : "none",
+                    }}
                   >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    rows="4"
-                    className="text-black w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-300 bg-gray-50 focus:bg-white resize-none hover:border-gray-300 transform focus:scale-[1.02] hover:shadow-md"
-                    placeholder="Tell us more..."
-                    required
-                  />
-                </div>
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      rows="4"
+                      className="text-black w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-300 bg-gray-50 focus:bg-white resize-none hover:border-gray-300 transform focus:scale-[1.02] hover:shadow-md"
+                      placeholder="Tell us more..."
+                      required
+                    />
+                  </div>
 
-                {/* Submit Button */}
-                <div
-                  className={` flex gap-4 pt-2 transition-all duration-600 ease-out ${
-                    isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-6"
-                  }`}
-                  style={{
-                    animation: isVisible
-                      ? "slideInUp 0.6s ease-out 0.6s backwards"
-                      : "none",
-                  }}
-                >
-                  <button
-                    type="submit"
-                    onClick={handleSubmit}
-                    className="w-full bg-black  text-white py-3 px-4 rounded-lg font-medium transition-all duration-300 tracking-wide transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl relative overflow-hidden group"
+                  {/* Submit Button */}
+                  <div
+                    className={`flex gap-4 pt-2 transition-all duration-600 ease-out ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-6"
+                    }`}
+                    style={{
+                      animation: isVisible
+                        ? "slideInUp 0.6s ease-out 0.6s backwards"
+                        : "none",
+                    }}
                   >
-                    <span className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                    <span className="relative flex items-center justify-center">
-                      Send Message
-                      <svg
-                        className="w-4 h-4 ml-2 mt-1 transition-transform duration-300 group-hover:translate-x-1"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                        />
-                      </svg>
-                    </span>
-                  </button>
+                    <button
+                      type="submit"
+                      className="w-full bg-black text-white py-3 px-4 rounded-lg font-medium transition-all duration-300 tracking-wide transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl relative overflow-hidden group"
+                    >
+                      <span className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                      <span className="relative flex items-center justify-center">
+                        Send Message
+                        <svg
+                          className="w-4 h-4 ml-2 mt-1 transition-transform duration-300 group-hover:translate-x-1"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                          />
+                        </svg>
+                      </span>
+                    </button>
 
-                  <a
-                    href="tel:+919998089866"
-                    className="w-1/4 bg-black  text-white py-3 px-4 rounded-lg font-medium transition-all duration-300 tracking-wide transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl relative overflow-hidden group"
-                  >
-                    <span className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                    <span className="relative flex items-center justify-center">
-                      <i class="ri-phone-fill text-white"></i>
-                    </span>
-                  </a>
+                    <a
+                      href="tel:+919998089866"
+                      className="w-1/4 bg-black text-white py-3 px-4 rounded-lg font-medium transition-all duration-300 tracking-wide transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl relative overflow-hidden group"
+                    >
+                      <span className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                      <span className="relative flex items-center justify-center">
+                        <i className="ri-phone-fill text-white"></i>
+                      </span>
+                    </a>
+                  </div>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
@@ -357,13 +357,12 @@ const ContactUs = () => {
 
       {
         <div
-          className={`bg-black fixed top-10  -right-1 w-[35%] sm:w-[17%] h-14 rounded-l-2xl border-2 border-gray-400 flex justify-center items-center transition duration-500 ease-in-out transform ${
+          className={`bg-black fixed top-10 -right-1 w-[35%] sm:w-[17%] h-14 rounded-l-2xl border-2 border-gray-400 flex justify-center items-center transition duration-500 ease-in-out transform ${
             notification ? "translate-x-0" : "translate-x-46 sm:translate-x-64"
           } `}
         >
           <p className="font-mono">
-            {" "}
-            <i class="ri-checkbox-circle-fill text-lg text-lime-400"></i>{" "}
+            <i className="ri-checkbox-circle-fill text-lg text-lime-400"></i>{" "}
             Message Sent
           </p>
         </div>
