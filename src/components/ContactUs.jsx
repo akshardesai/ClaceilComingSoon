@@ -24,7 +24,7 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    if (!formData.email || formData.email.length<=0) {
+    if (!formData.email || formData.email.length <= 0) {
       return;
     }
 
@@ -204,6 +204,7 @@ const ContactUs = () => {
                     onChange={handleInputChange}
                     className="text-black w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-300 bg-gray-50 focus:bg-white hover:border-gray-300 transform focus:scale-[1.02] hover:shadow-md"
                     placeholder="Your name"
+                    required
                   />
                 </div>
 
@@ -235,6 +236,7 @@ const ContactUs = () => {
                     required
                     className="text-black w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-300 bg-gray-50 focus:bg-white hover:border-gray-300 transform focus:scale-[1.02] hover:shadow-md"
                     placeholder="your@email.com"
+                    
                   />
                 </div>
 
@@ -265,6 +267,7 @@ const ContactUs = () => {
                     onChange={handleInputChange}
                     className="text-black w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-300 bg-gray-50 focus:bg-white hover:border-gray-300 transform focus:scale-[1.02] hover:shadow-md"
                     placeholder="What's this about?"
+                    required
                   />
                 </div>
 
@@ -295,6 +298,7 @@ const ContactUs = () => {
                     rows="4"
                     className="text-black w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-300 bg-gray-50 focus:bg-white resize-none hover:border-gray-300 transform focus:scale-[1.02] hover:shadow-md"
                     placeholder="Tell us more..."
+                    required
                   />
                 </div>
 
@@ -312,7 +316,7 @@ const ContactUs = () => {
                   }}
                 >
                   <button
-                  type="submit"
+                    type="submit"
                     onClick={handleSubmit}
                     className="w-full bg-black  text-white py-3 px-4 rounded-lg font-medium transition-all duration-300 tracking-wide transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl relative overflow-hidden group"
                   >
