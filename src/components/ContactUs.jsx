@@ -35,6 +35,7 @@ const ContactUs = () => {
       setNotification(true);
 
       // Hide notification after 3 seconds
+      //added variables in netlify
       setTimeout(() => {
         setNotification(false);
       }, 2000);
@@ -48,8 +49,7 @@ const ContactUs = () => {
       });
     } else {
       alert("Failed to send message");
-      console.log('error',response.error);
-      
+      console.log("error", response.error);
     }
   };
 
