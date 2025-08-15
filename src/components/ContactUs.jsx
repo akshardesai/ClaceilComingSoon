@@ -23,7 +23,7 @@ const ContactUs = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    console.log("Form data:", formData);
     if (!formData.email || formData.email.length <= 0) {
       return;
     }
@@ -48,6 +48,8 @@ const ContactUs = () => {
       });
     } else {
       alert("Failed to send message");
+      console.log('error',response.error);
+      
     }
   };
 
